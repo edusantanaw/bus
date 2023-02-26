@@ -30,7 +30,7 @@ public class Place {
     @Column(nullable = false)
     private String state;
     @Column(nullable = false, updatable = false)
-    @CreatedDate
+    @CreatedDate()
     private Date createdAt;
     @Column(nullable = false)
     @LastModifiedDate

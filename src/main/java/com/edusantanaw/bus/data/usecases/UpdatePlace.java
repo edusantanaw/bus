@@ -8,6 +8,10 @@ import com.edusantanaw.bus.validation.DTO.UpdatePlaceDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
+
 @RequiredArgsConstructor
 @Service
 public class UpdatePlace implements IUpdatePlace {
@@ -23,6 +27,11 @@ public class UpdatePlace implements IUpdatePlace {
         place.setSlug(data.getSlug());
         place.setCity(data.getCity());
         place.setState(data.getState());
+        place.setUpdatedAt(currentDate());
         placeRepository.save(place);
+    }
+    private Date currentDate(){
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        return Date.from(currentDateTime.atZone(ZoneId.systemDefault()).toInstant());
     }
 }
