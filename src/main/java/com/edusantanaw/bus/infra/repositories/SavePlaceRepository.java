@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @Service
-public class SavePlaceRepostitory implements ISavePlaceRepository {
+public class SavePlaceRepository implements ISavePlaceRepository {
 
     private final PlaceRepository repository;
 

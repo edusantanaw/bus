@@ -17,17 +17,17 @@ import java.util.UUID;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/place")
+@RequestMapping("/api/place/load")
 public class LoadPlacesController {
     private ILoadPlace loadPlace;
     @GetMapping
-    public ResponseEntity<List<Place>> loadAll(Pageable page) {
-        List<Place> places = loadPlace.loadAllPlaces(page);
+    public ResponseEntity<List<Place>> loadAll() {
+        List<Place> places = loadPlace.loadAllPlaces();
         return ResponseEntity.ok(places);
     }
 
-    @GetMapping
-    public ResponseEntity<List<Place>> loadByName(@Param("name") String name) {
+    @GetMapping("/{name}")
+    public ResponseEntity<List<Place>> loadByName(@RequestParam String name) {
         List<Place> places = loadPlace.loadPlacesByName(name);
         return ResponseEntity.ok(places);
     }

@@ -9,5 +9,5 @@ import java.util.UUID;
 public interface ILoadPlace {
     Place loadById(UUID id);
     List<Place> loadPlacesByName(String name);
-    List<Place> loadAllPlaces(Pageable page);
+    List<Place> loadAllPlaces();
 }

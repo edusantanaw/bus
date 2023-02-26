@@ -20,11 +20,11 @@ public class LoadPlaceRepository implements ILoadPlaceRepository {
         return repository.findById(id);
     }
 
-    public List<Place> findByPlaceNameContaining(String name) {
-        return repository.findByPlaceNameContaining(name);
+    public List<Place> findByNameContaining(String name) {
+        return repository.findByNameContaining(name);
     }
 
-    public List<Place> findAll(Pageable page) {
-        return repository.findAll(page);
+    public List<Place> findAll() {
+        return repository.findAll();
     }
 }

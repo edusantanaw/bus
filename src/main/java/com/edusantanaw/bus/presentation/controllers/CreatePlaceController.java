@@ -2,7 +2,6 @@ package com.edusantanaw.bus.presentation.controllers;
 
 import com.edusantanaw.bus.domain.entities.Place;
 import com.edusantanaw.bus.domain.usecases.ICreatePlace;
-import com.edusantanaw.bus.domain.usecases.ILoadPlace;
 import com.edusantanaw.bus.validation.DTO.CreatePlaceDTO;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -12,10 +11,9 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/place")
+@RequestMapping("/api/place/create")
 public class CreatePlaceController {
     private final ICreatePlace createPlace;
-    private ILoadPlace loadPlace;
 
     @PostMapping
     public ResponseEntity<?> create(

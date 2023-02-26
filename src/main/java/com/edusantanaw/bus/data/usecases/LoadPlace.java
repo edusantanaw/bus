@@ -23,10 +23,10 @@ public class LoadPlace implements ILoadPlace {
     }
 
     public List<Place> loadPlacesByName(String name) {
-        return placeRepository.findByPlaceNameContaining(name);
+        return placeRepository.findByNameContaining(name);
     }
 
-    public List<Place> loadAllPlaces(Pageable page) {
-        return placeRepository.findAll(page);
+    public List<Place> loadAllPlaces() {
+        return placeRepository.findAll();
     }
 }
