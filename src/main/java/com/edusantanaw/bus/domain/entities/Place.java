@@ -27,6 +27,9 @@ public class Place {
     private String slug;
     @Column(nullable = false)
     private String city;
+    @Column(nullable = false)
+    private String state;
+
     @Column(nullable = false, updatable = false)
     @CreatedDate
     private Date createdAt;
